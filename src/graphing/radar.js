@@ -211,11 +211,11 @@ const Radar = function (size, radar) {
           }
 
           group.append('text')
-            .attr('x', x)
-            .attr('y', y + 4)
+            .attr('x', x+10)
+            .attr('y', y)
             .attr('class', 'blip-text')
             .attr('text-anchor', 'middle')
-            .text(blip.number());
+            .text(blip.name());
 
           var blipListItem = ringList.append('li');
           var blipText = blip.number() + '. ' + blip.name() + (blip.topic() ? ('. - ' + blip.topic()) : '');
@@ -321,24 +321,24 @@ const Radar = function (size, radar) {
       .transition()
       .style('visibility', 'visible');
 
-    triangleLegend(x, y, container);
+    // triangleLegend(x, y, container);
 
-    container
-      .append('text')
-      .attr('x', x + 15)
-      .attr('y', y + 5)
-      .attr('font-size', '0.8em')
-      .text(triangleKey);
+    // container
+    //   .append('text')
+    //   .attr('x', x + 15)
+    //   .attr('y', y + 5)
+    //   .attr('font-size', '0.8em')
+    //   .text(triangleKey);
 
 
-    circleLegend(x, y + 20, container);
+    // circleLegend(x, y + 20, container);
 
-    container
-      .append('text')
-      .attr('x', x + 15)
-      .attr('y', y + 25)
-      .attr('font-size', '0.8em')
-      .text(circleKey);
+    // container
+    //   .append('text')
+    //   .attr('x', x + 15)
+    //   .attr('y', y + 25)
+    //   .attr('font-size', '0.8em')
+    //   .text(circleKey);
   }
 
   function redrawFullRadar() {
@@ -460,7 +460,7 @@ const Radar = function (size, radar) {
     var moveRight = (1 + adjustX) * (0.8 * window.innerWidth - size) / 2;
     var moveLeft = (1 - adjustX) * (0.8 * window.innerWidth - size) / 2;
 
-    var blipScale = 3 / 4;
+    var blipScale = 3/4;
     var blipTranslate = (1 - blipScale) / blipScale;
 
     svg.style('left', moveLeft + 'px').style('right', moveRight + 'px');

@@ -38,8 +38,9 @@ const Radar = function() {
    function allQuadrants() {
     if (addingQuadrant < 4)
       throw new MalformedDataError(ExceptionMessages.LESS_THAN_FOUR_QUADRANTS);
-
-    return _.map(quadrants, 'quadrant');
+       //console.log(_.map(quadrants, 'quadrant')); 
+       console.log(quadrants);
+       return _.map(quadrants, 'quadrant');
   }
 
   function allBlips() {

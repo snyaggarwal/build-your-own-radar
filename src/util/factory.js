@@ -75,7 +75,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
 
                 var all = tabletop.sheets(sheetName).all();
                 var blips = _.map(all, new InputSanitizer().sanitize);
-
+                console.log(blips);
                 document.title = tabletop.googleSheetName;
                 d3.selectAll(".loading").remove();
 
